@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search notes — Home Tutions by Shagufa Khan</title>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header"><div id="site-header"></div></header>
+
+<section class="section container">
+  <div class="section-head"><h2>Search notes</h2></div>
+  <form class="search-bar" style="margin:0 0 24px;max-width:100%;" onsubmit="event.preventDefault(); doSearch(document.getElementById('q').value);">
+    <input id="q" type="text" placeholder="Search by topic, subject or class...">
+    <button type="submit">Search</button>
+  </form>
+  <div class="resource-list" id="resourceList"></div>
+</section>
+
+<footer><div id="site-footer"></div></footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/data.js"></script>
+<script>
+  renderLayout("");
+  let ALL = [];
+  const params = new URLSearchParams(window.location.search);
+
+  function doSearch(query) {
+    const q = query.trim().toLowerCase();
+    const list = document.getElementById("resourceList");
+    const items = q
+      ? ALL.filter(r => [r.title, r.subject, r.levelLabel, r.description].join(" ").toLowerCase().includes(q))
+      : ALL;
+    list.innerHTML = items.length
+      ? items.map(r => resourceCardHTML(r, SITE_CONFIG.basePath)).join("")
+      : `<div class="empty-state">No notes found${q ? ` for "${query}"` : ""}. Try a different keyword, or browse by <a href="levels.html">level</a>.</div>`;
+  }
+
+  loadData().then((data) => {
+    ALL = data.resources;
+    const q = params.get("q") || "";
+    document.getElementById("q").value = q;
+    doSearch(q);
+  });
+</script>
+</body>
+</html>

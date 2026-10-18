@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Browse notes — Home Tutions by Shagufa Khan</title>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header"><div id="site-header"></div></header>
+
+<section class="section container">
+  <div class="section-head">
+    <h2 id="pageTitle">Browse notes</h2>
+  </div>
+
+  <div class="filter-row" id="bandChips"></div>
+  <div class="filter-row" id="subjectChips"></div>
+
+  <div class="resource-list" id="resourceList"></div>
+</section>
+
+<footer><div id="site-footer"></div></footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/data.js"></script>
+<script>
+  renderLayout("");
+
+  const params = new URLSearchParams(window.location.search);
+  let activeBand = params.get("band") || "secondary";
+  let activeSubject = "all";
+
+  loadData().then((data) => {
+    function levelsForBand(bandId) {
+      const band = data.bands.find(b => b.id === bandId);
+      return band ? band.levels : [];
+    }
+
+    function renderBandChips() {
+      document.getElementById("bandChips").innerHTML = data.bands.map(b => `
+        <button class="chip ${b.id === activeBand ? "active" : ""}" data-band="${b.id}">${b.label} (${b.count})</button>
+      `).join("");
+      document.querySelectorAll("[data-band]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          activeBand = btn.dataset.band;
+          activeSubject = "all";
+          update();
+        });
+      });
+    }
+
+    function update() {
+      const levels = levelsForBand(activeBand);
+      const bandLabel = (data.bands.find(b => b.id === activeBand) || {}).label || "Notes";
+      document.getElementById("pageTitle").textContent = bandLabel;
+
+      let items = data.resources.filter(r => levels.includes(r.level));
+      const subjects = [...new Set(items.map(r => r.subject))].sort();
+
+      document.getElementById("subjectChips").innerHTML = ["all", ...subjects].map(s => `
+        <button class="chip ${s === activeSubject ? "active" : ""}" data-subject="${s}">${s === "all" ? "All subjects" : s}</button>
+      `).join("");
+      document.querySelectorAll("[data-subject]").forEach(btn => {
+        btn.addEventListener("click", () => { activeSubject = btn.dataset.subject; update(); });
+      });
+
+      if (activeSubject !== "all") items = items.filter(r => r.subject === activeSubject);
+
+      const list = document.getElementById("resourceList");
+      list.innerHTML = items.length
+        ? items.map(r => resourceCardHTML(r, SITE_CONFIG.basePath)).join("")
+        : `<div class="empty-state">No notes uploaded for this level yet — check back soon, or watch the latest videos on <a href="${SITE_CONFIG.youtubeUrl}" target="_blank" rel="noopener">YouTube</a>.</div>`;
+
+      renderBandChips();
+    }
+
+    update();
+  });
+</script>
+</body>
+</html>

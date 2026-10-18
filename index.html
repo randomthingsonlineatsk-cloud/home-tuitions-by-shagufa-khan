@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Tutions by Shagufa Khan — Free Notes, Solutions &amp; Video Lessons</title>
+<meta name="description" content="Free downloadable notes and video lessons for Class 1 to 12, NEET, JEE, B.Sc and M.Sc.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header"><div id="site-header"></div></header>
+
+<section class="hero">
+  <div class="blob" style="width:260px;height:260px;background:#fce2e4;top:-80px;left:-80px;"></div>
+  <div class="blob" style="width:200px;height:200px;background:#fef3c7;top:-60px;right:-60px;"></div>
+  <div class="blob" style="width:220px;height:220px;background:#ccfbf1;bottom:-100px;right:10%;"></div>
+  <div class="container content">
+    <img class="logo" src="assets/img/logo.png" alt="Home Tutions by Shagufa Khan logo" onerror="this.style.display='none'">
+    <h1>Home Tutions by Shagufa Khan</h1>
+    <p class="tagline">Free notes, solutions and video lessons — Class 1 to NEET, JEE, B.Sc &amp; M.Sc</p>
+    <form class="search-bar" onsubmit="event.preventDefault(); window.location.href='search.html?q=' + encodeURIComponent(document.getElementById('heroSearch').value);">
+      <input id="heroSearch" type="text" placeholder="Search notes by topic, subject or class...">
+      <button type="submit">Search</button>
+    </form>
+    <div class="cta-row">
+      <a class="btn btn-youtube" href="#" id="ytBtn" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+      <a class="btn btn-insta" href="#" id="igBtn" target="_blank" rel="noopener">📷 Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head"><h2>Browse by level</h2></div>
+  <div class="level-grid" id="levelGrid"></div>
+</section>
+
+<section class="section container">
+  <div class="section-head"><h2>Latest uploads</h2><a class="btn btn-outline" href="search.html">See all →</a></div>
+  <div class="resource-list" id="latestList"></div>
+</section>
+
+<footer><div id="site-footer"></div></footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/data.js"></script>
+<script>
+  renderLayout("Home");
+  document.getElementById("ytBtn").href = SITE_CONFIG.youtubeUrl;
+  document.getElementById("igBtn").href = SITE_CONFIG.instagramUrl;
+
+  const EMOJI = { primary:"🧒", middle:"📘", secondary:"📗", senior:"🎓", neet:"🧬", jee:"⚛️", bsc:"🔬", msc:"🧪" };
+
+  loadData().then((data) => {
+    const grid = document.getElementById("levelGrid");
+    grid.innerHTML = data.bands.map(b => `
+      <a class="level-card" href="levels.html?band=${b.id}">
+        <span class="emoji">${EMOJI[b.id] || "📚"}</span>
+        <h3>${b.label}</h3>
+        <span class="count">${b.count} note${b.count === 1 ? "" : "s"} available</span>
+      </a>`).join("");
+
+    const latest = document.getElementById("latestList");
+    if (data.resources.length === 0) {
+      latest.innerHTML = `<div class="empty-state">No notes uploaded yet — check back soon!</div>`;
+    } else {
+      latest.innerHTML = data.resources.slice(0, 6).map(r => resourceCardHTML(r, SITE_CONFIG.basePath)).join("");
+    }
+  });
+</script>
+</body>
+</html>

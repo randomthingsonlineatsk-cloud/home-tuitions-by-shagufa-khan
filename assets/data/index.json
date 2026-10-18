@@ -1,0 +1,120 @@
+{
+  "resources": [
+    {
+      "title": "The Human Heart - Structure & Double Circulation",
+      "level": "class-10",
+      "levelLabel": "Class 10",
+      "subject": "Biology",
+      "description": "Four chambers, valves, pulmonary and systemic circulation, with a solved cardiac-output example. NEET relevant.",
+      "video_url": "https://youtube.com/@hometutionsbyshagufakhan",
+      "date": "2026-10-18",
+      "file": "content/class-10/biology/the-human-heart/notes.pdf",
+      "size": "137.6 KB",
+      "slug": "class-10/biology/the-human-heart"
+    },
+    {
+      "title": "Ohm's Law",
+      "level": "class-10",
+      "levelLabel": "Class 10",
+      "subject": "Physics",
+      "description": "Current, resistance, voltage and the V = IR relationship, with solved numericals.",
+      "video_url": "https://youtube.com/@hometutionsbyshagufakhan",
+      "date": "2026-09-20",
+      "file": "content/class-10/physics/ohms-law/notes.pdf",
+      "size": "218.1 KB",
+      "slug": "class-10/physics/ohms-law"
+    }
+  ],
+  "bands": [
+    {
+      "id": "primary",
+      "label": "Class 1-5 (Primary)",
+      "levels": [
+        "class-1",
+        "class-2",
+        "class-3",
+        "class-4",
+        "class-5"
+      ],
+      "count": 0
+    },
+    {
+      "id": "middle",
+      "label": "Class 6-8 (Middle)",
+      "levels": [
+        "class-6",
+        "class-7",
+        "class-8"
+      ],
+      "count": 0
+    },
+    {
+      "id": "secondary",
+      "label": "Class 9-10 (Secondary)",
+      "levels": [
+        "class-9",
+        "class-10"
+      ],
+      "count": 2
+    },
+    {
+      "id": "senior",
+      "label": "Class 11-12 (Senior Secondary)",
+      "levels": [
+        "class-11",
+        "class-12"
+      ],
+      "count": 0
+    },
+    {
+      "id": "neet",
+      "label": "NEET",
+      "levels": [
+        "neet"
+      ],
+      "count": 0
+    },
+    {
+      "id": "jee",
+      "label": "JEE (Main & Advanced)",
+      "levels": [
+        "jee"
+      ],
+      "count": 0
+    },
+    {
+      "id": "bsc",
+      "label": "B.Sc",
+      "levels": [
+        "bsc"
+      ],
+      "count": 0
+    },
+    {
+      "id": "msc",
+      "label": "M.Sc",
+      "levels": [
+        "msc"
+      ],
+      "count": 0
+    }
+  ],
+  "levelLabels": {
+    "class-1": "Class 1",
+    "class-2": "Class 2",
+    "class-3": "Class 3",
+    "class-4": "Class 4",
+    "class-5": "Class 5",
+    "class-6": "Class 6",
+    "class-7": "Class 7",
+    "class-8": "Class 8",
+    "class-9": "Class 9",
+    "class-10": "Class 10",
+    "class-11": "Class 11",
+    "class-12": "Class 12",
+    "neet": "NEET",
+    "jee": "JEE",
+    "bsc": "B.Sc",
+    "msc": "M.Sc"
+  }
+}

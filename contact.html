@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Home Tutions by Shagufa Khan</title>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header"><div id="site-header"></div></header>
+
+<section class="section container" style="max-width:640px;">
+  <div class="card">
+    <h2 style="margin-top:0;color:var(--teal-dark);">Get in touch</h2>
+    <p style="color:var(--gray);">
+      Questions, doubts, or want a topic covered? Reach out directly — no form, no middleman,
+      no third-party service with its own limits:
+    </p>
+    <div class="cta-row" style="justify-content:flex-start;margin:18px 0 6px;">
+      <a class="btn btn-teal" href="#" id="mailBtn">✉ Email</a>
+      <a class="btn btn-youtube" href="#" id="ytBtn" target="_blank" rel="noopener">▶ YouTube</a>
+      <a class="btn btn-insta" href="#" id="igBtn" target="_blank" rel="noopener">📷 Instagram DM</a>
+    </div>
+  </div>
+</section>
+
+<footer><div id="site-footer"></div></footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/layout.js"></script>
+<script>
+  renderLayout("Contact");
+  document.getElementById("mailBtn").href = "mailto:" + SITE_CONFIG.contactEmail;
+  document.getElementById("mailBtn").textContent = "✉ " + SITE_CONFIG.contactEmail;
+  document.getElementById("ytBtn").href = SITE_CONFIG.youtubeUrl;
+  document.getElementById("igBtn").href = SITE_CONFIG.instagramUrl;
+</script>
+</body>
+</html>

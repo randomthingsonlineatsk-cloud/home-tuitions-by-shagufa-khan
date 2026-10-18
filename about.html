@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Home Tutions by Shagufa Khan</title>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header"><div id="site-header"></div></header>
+
+<section class="section container" style="max-width:760px;">
+  <div class="card">
+    <h2 style="margin-top:0;color:var(--teal-dark);">About Home Tutions by Shagufa Khan</h2>
+    <p>
+      Home Tutions by Shagufa Khan offers free, easy-to-understand video lessons and downloadable
+      notes for Class 1 to 12, NEET, JEE, and undergraduate &amp; postgraduate science students
+      (B.Sc &amp; M.Sc).
+    </p>
+    <p>
+      Every topic comes with clear, animated video explanations, full written solutions for board
+      exam questions, and quick shortcuts for competitive and scholarship exams — all completely
+      free, so every student has access to quality learning material regardless of where they live
+      or what they can afford.
+    </p>
+    <div class="cta-row" style="justify-content:flex-start;margin-top:20px;">
+      <a class="btn btn-youtube" href="#" id="ytBtn" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+      <a class="btn btn-insta" href="#" id="igBtn" target="_blank" rel="noopener">📷 Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer><div id="site-footer"></div></footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/layout.js"></script>
+<script>
+  renderLayout("About");
+  document.getElementById("ytBtn").href = SITE_CONFIG.youtubeUrl;
+  document.getElementById("igBtn").href = SITE_CONFIG.instagramUrl;
+</script>
+</body>
+</html>
