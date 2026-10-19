@@ -58,7 +58,13 @@
             <a href="${bp}contact.html">Contact</a>
           </div>
         </div>
-        <div class="copyright">© <span id="year"></span> Home Tuitions by Shagufa Khan. Built for students, free, always.</div>
+        <div class="copyright">
+          © <span id="year"></span> Home Tuitions by Shagufa Khan. Built for students, free, always.
+          <div style="margin-top:10px;">
+            <img src="https://hits.sh/randomthingsonlineatsk-cloud.github.io/home-tuitions-by-shagufa-khan.svg?style=flat-square&label=site%20visits&color=0f766e"
+                 alt="site visit count" style="vertical-align:middle;">
+          </div>
+        </div>
       </div>`;
   }
 
