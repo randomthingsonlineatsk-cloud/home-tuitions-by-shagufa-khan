@@ -1,4 +1,4 @@
-# Home Tutions by Shagufa Khan
+# Home Tuitions by Shagufa Khan
 
 Free notes, solutions and video lessons — Class 1 to NEET, JEE, B.Sc & M.Sc.
 
@@ -37,7 +37,7 @@ Copy this, fill in your details, and upload it alongside `notes.pdf`:
   "levelLabel": "Class 10",
   "subject": "Biology",
   "description": "Light and dark reactions, factors affecting the rate, and a labelled diagram.",
-  "video_url": "https://youtube.com/@hometutionsbyshagufakhan/your-video-link",
+  "video_url": "https://www.youtube.com/@hometuitionsbyshagufakhan/your-video-link",
   "date": "2026-10-25"
 }
 ```

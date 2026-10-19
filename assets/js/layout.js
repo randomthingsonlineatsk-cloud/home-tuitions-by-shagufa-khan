@@ -23,7 +23,7 @@
       <div class="bar">
         <a class="brand" href="${bp}index.html">
           <img src="${bp}assets/img/logo.png" alt="logo" onerror="this.style.display='none'">
-          <span>Home Tutions<span class="sub">by Shagufa Khan</span></span>
+          <span>Home Tuitions<span class="sub">by Shagufa Khan</span></span>
         </a>
         <nav class="main-nav" id="main-nav">${navItems}</nav>
         <div class="header-social">
@@ -39,7 +39,7 @@
       <div class="container">
         <div class="footer-top">
           <div>
-            <h4>Home Tutions by Shagufa Khan</h4>
+            <h4>Home Tuitions by Shagufa Khan</h4>
             <p style="max-width:320px;color:#a9d9d1;font-size:0.88rem;">
               Free video lessons and downloadable notes for Class 1 to 12, NEET, JEE, B.Sc and M.Sc.
             </p>
@@ -58,7 +58,7 @@
             <a href="${bp}contact.html">Contact</a>
           </div>
         </div>
-        <div class="copyright">© <span id="year"></span> Home Tutions by Shagufa Khan. Built for students, free, always.</div>
+        <div class="copyright">© <span id="year"></span> Home Tuitions by Shagufa Khan. Built for students, free, always.</div>
       </div>`;
   }
 
