@@ -23,7 +23,8 @@ window.resourceCardHTML = function (r, basePath) {
       </div>
       <div class="resource-actions">
         ${videoBtn}
-        <a class="btn btn-teal" href="${basePath}${r.file}" download>⬇ Download PDF</a>
+        <a class="btn btn-teal" href="${basePath}${r.file}" target="_blank" rel="noopener">📖 Read online</a>
+        <a class="btn btn-outline" href="${basePath}${r.file}" download>⬇ Download</a>
       </div>
     </div>`;
 };
