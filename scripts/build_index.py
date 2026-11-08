@@ -83,6 +83,7 @@ def main():
                         "subject": meta.get("subject", subject.replace("-", " ").title()),
                         "description": meta.get("description", ""),
                         "video_url": meta.get("video_url", ""),
+                        "instagram_url": meta.get("instagram_url", ""),
                         "date": meta.get("date", ""),
                         "file": rel_pdf,
                         "size": human_size(size_bytes),
