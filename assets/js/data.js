@@ -10,6 +10,9 @@ window.resourceCardHTML = function (r, basePath) {
   const videoBtn = r.video_url
     ? `<a class="btn btn-outline" href="${r.video_url}" target="_blank" rel="noopener">▶ Watch video</a>`
     : "";
+  const instaBtn = r.instagram_url
+    ? `<a class="btn btn-outline" href="${r.instagram_url}" target="_blank" rel="noopener">📸 Instagram</a>`
+    : "";
   return `
     <div class="resource-card">
       <div class="resource-main">
@@ -23,6 +26,7 @@ window.resourceCardHTML = function (r, basePath) {
       </div>
       <div class="resource-actions">
         ${videoBtn}
+        ${instaBtn}
         <a class="btn btn-teal" href="${basePath}${r.file}" target="_blank" rel="noopener">📖 Read online</a>
         <a class="btn btn-outline" href="${basePath}${r.file}" download>⬇ Download</a>
       </div>
